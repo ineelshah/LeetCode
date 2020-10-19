@@ -4,18 +4,20 @@ class Solution {
         if(matrix == null || matrix.length == 0)
             return false;
         
-        int m = matrix.length  - 1;
-        int n = matrix[0].length - 1;
+        int r = matrix.length - 1;
+        int c = matrix[0].length - 1;
         
         int i = 0;
-        int j = n;
+        int j = c;
         
-        while(  (i >=0 && i<=m) && (j>=0 && j<=n)  ){
+        while(i <= r && j >= 0) {
             int curr = matrix[i][j];
-            if(curr == target)return true;
-            if(target > curr){
+            if(curr == target)
+                return true;
+            else if(target > curr) {
                 i++;
-            }else{
+            }
+            else {
                j--; 
             }
         } 
